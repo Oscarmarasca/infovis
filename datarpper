@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>JS Bin</title>
-</head>
-<body>  
-     <h1> Día 3 Datarapper
-    
-  
- 
-    
-    <div style="min-height:385px" id="datawrapper-vis-i6dtZ"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/i6dtZ/embed.js" charset="utf-8" data-target="#datawrapper-vis-i6dtZ"></script><noscript><img src="https://datawrapper.dwcdn.net/i6dtZ/full.png" alt="Gastos mensuales de Oscar junio 2024 a agosto 2025 (Bar Chart)" /></noscript></div>
-</body>
-</html>
+<div style="min-height:385px" id="datawrapper-vis-i6dtZ">
+  <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/i6dtZ/embed.js" charset="utf-8" data-target="#datawrapper-vis-i6dtZ"></script>
+  <noscript>
+    <img src="https://datawrapper.dwcdn.net/i6dtZ/full.png" alt="Gastos mensuales de Oscar junio 2024 a agosto 2025 (Bar Chart)" />
+  </noscript>
+</div>
+
