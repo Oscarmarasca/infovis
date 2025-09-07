@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gasto en internet y electricidad julio 2024 - junio 2025</title>
+
   <style>
     body {
-      text-align: center;               /* centra contenido inline/inline-block */
+      text-align: center;
       font-family: Arial, sans-serif;
+      padding: 10px;
     }
     h4 {
-      font-size: 12px;                  /* tamaño de títulos */
+      font-size: 12px; /* tamaño pedido */
       margin: 10px 0;
     }
     iframe {
-      display: block;                   /* centra los iframes */
-      margin: 0 auto 20px auto;
+      display: block;
+      margin: 0 auto 20px;
       border: none;
     }
-    /* Contenedor de Tableau centrado */
+    /* Contenedores Tableau: fijos a 800x600 tal como querías */
     .tableauPlaceholder {
-      margin: 0 auto 20px auto;
-      display: inline-block;            /* permite centrar con text-align:center del body */
+      margin: 0 auto 20px;
+      display: inline-block;
+      width: 800px;
+      height: 600px;
       position: relative;
+    }
+    /* El object lo dejamos oculto hasta que el script de tableau lo procese,
+       pero le damos ancho/alto para que la librería lo reemplace correctamente */
+    .tableauPlaceholder object {
+      display: none;
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
@@ -35,19 +46,17 @@
   <!-- GRAFICO 2 - Flourish -->
   <h4>Serie gasto electricidad - internet representada por gráfico de barras</h4>
   <iframe src="https://oscarmarasca.github.io/infovis/tp_flourish.html" width="800" height="600"></iframe>
-  
+
   <!-- GRAFICO 3 - RawGraphs -->
   <h4>Gráfico circular que representa el gasto en internet y electricidad según tipo y mes</h4>
   <iframe src="https://oscarmarasca.github.io/infovis/tp_1_rowgraphs.html" width="800" height="600"></iframe>
-  
+
   <!-- GRAFICO 4 - Tableau (A) -->
   <h4>Índice de evolución del gasto en internet, electricidad e IPC (base 100 julio 2024)</h4>
   <div class="tableauPlaceholder" id="viz1756824737605">
     <noscript>
-      <a href="#">
-        <img alt="Índice de evolución del gasto" 
-             src="https://public.tableau.com/static/images/tp/tp_1_tableau_b_17568247064800/Hoja1/1_rss.png"/>
-      </a>
+      <a href="#"><img alt="Índice de evolución del gasto"
+        src="https://public.tableau.com/static/images/tp/tp_1_tableau_b_17568247064800/Hoja1/1_rss.png"/></a>
     </noscript>
     <object class="tableauViz" style="display:none;">
       <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F"/>
@@ -66,26 +75,13 @@
       <param name="filter" value="publish=yes"/>
     </object>
   </div>
-  <script type="text/javascript">
-    (function(){
-      var divElement = document.getElementById("viz1756824737605");
-      var vizElement = divElement.getElementsByTagName("object")[0];
-      vizElement.style.width = "800px";
-      vizElement.style.height = "600px";
-      var scriptElement = document.createElement("script");
-      scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
-      vizElement.parentNode.insertBefore(scriptElement, vizElement);
-    })();
-  </script>
 
   <!-- GRAFICO 5 - Tableau (B) -->
   <h4>Consumo y Costo del servicio de electricidad (julio 2024 - junio 2025)</h4>
   <div class="tableauPlaceholder" id="viz1756788165126">
     <noscript>
-      <a href="#">
-        <img alt="Consumo y Costo electricidad" 
-             src="https://public.tableau.com/static/images/tp/tp_1_tableau/Hoja1/1_rss.png"/>
-      </a>
+      <a href="#"><img alt="Consumo y Costo electricidad"
+        src="https://public.tableau.com/static/images/tp/tp_1_tableau/Hoja1/1_rss.png"/></a>
     </noscript>
     <object class="tableauViz" style="display:none;">
       <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F"/>
@@ -103,26 +99,13 @@
       <param name="language" value="es-ES"/>
     </object>
   </div>
-  <script type="text/javascript">
-    (function(){
-      var divElement = document.getElementById("viz1756788165126");
-      var vizElement = divElement.getElementsByTagName("object")[0];
-      vizElement.style.width = "800px";
-      vizElement.style.height = "600px";
-      var scriptElement = document.createElement("script");
-      scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
-      vizElement.parentNode.insertBefore(scriptElement, vizElement);
-    })();
-  </script>
 
   <!-- GRAFICO 6 - Tableau (C) -->
   <h4>Costo del servicio de internet (julio 2024 - junio 2025)</h4>
   <div class="tableauPlaceholder" id="viz1756788449117">
     <noscript>
-      <a href="#">
-        <img alt="Costo servicio de internet" 
-             src="https://public.tableau.com/static/images/tp/tp_1_tableau_b/Hoja2/1_rss.png"/>
-      </a>
+      <a href="#"><img alt="Costo servicio de internet"
+        src="https://public.tableau.com/static/images/tp/tp_1_tableau_b/Hoja2/1_rss.png"/></a>
     </noscript>
     <object class="tableauViz" style="display:none;">
       <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F"/>
@@ -141,15 +124,31 @@
       <param name="filter" value="publish=yes"/>
     </object>
   </div>
-  <script type="text/javascript">
+
+  <!-- CARGA ÚNICA del API de Tableau -->
+  <script src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
+
+  <!-- Inicialización segura (solo cambia tamaños / evita errores si falta algo) -->
+  <script>
     (function(){
-      var divElement = document.getElementById("viz1756788449117");
-      var vizElement = divElement.getElementsByTagName("object")[0];
-      vizElement.style.width = "800px";
-      vizElement.style.height = "600px";
-      var scriptElement = document.createElement("script");
-      scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
-      vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      var ids = ['viz1756824737605','viz1756788165126','viz1756788449117'];
+      ids.forEach(function(id){
+        try {
+          var div = document.getElementById(id);
+          if(!div) return;
+          // garantizamos el tamaño del contenedor
+          div.style.width = '800px';
+          div.style.height = '600px';
+          var obj = div.getElementsByTagName('object')[0];
+          if(!obj) return;
+          // dar dimensiones relativas al object para que la librería lo reemplace bien
+          obj.style.width = '100%';
+          obj.style.height = '100%';
+        } catch(e) {
+          // no interrumpe la ejecución si hay error
+          console.error('Error inicializando tableau embed', id, e);
+        }
+      });
     })();
   </script>
 
