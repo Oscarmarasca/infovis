@@ -6,16 +6,23 @@
   <title>Gasto en internet y electricidad julio 2024 - junio 2025</title>
   <style>
     body {
-      text-align: center; /* centra todo el contenido */
+      text-align: center;               /* centra contenido inline/inline-block */
       font-family: Arial, sans-serif;
     }
     h4 {
-      font-size: 12px;   /* tamaño de títulos */
-      margin: 10px 0;    /* separa un poco del gráfico */
+      font-size: 12px;                  /* tamaño de títulos */
+      margin: 10px 0;
     }
     iframe {
-      display: block;
-      margin: 0 auto;    /* centra cada iframe */
+      display: block;                   /* centra los iframes */
+      margin: 0 auto 20px auto;
+      border: none;
+    }
+    /* Contenedor de Tableau centrado */
+    .tableauPlaceholder {
+      margin: 0 auto 20px auto;
+      display: inline-block;            /* permite centrar con text-align:center del body */
+      position: relative;
     }
   </style>
 </head>
@@ -23,83 +30,127 @@
 
   <!-- GRAFICO 1 - Datawrapper -->
   <h4>Data set utilizado</h4>
-  <iframe src="https://oscarmarasca.github.io/infovis/practico_1.html" 
-          width="800" height="600" style="border:none;"></iframe>
+  <iframe src="https://oscarmarasca.github.io/infovis/practico_1.html" width="800" height="600"></iframe>
 
   <!-- GRAFICO 2 - Flourish -->
   <h4>Serie gasto electricidad - internet representada por gráfico de barras</h4>
-  <iframe src="https://oscarmarasca.github.io/infovis/tp_flourish.html" 
-          width="800" height="600" style="border:none;"></iframe>
+  <iframe src="https://oscarmarasca.github.io/infovis/tp_flourish.html" width="800" height="600"></iframe>
   
   <!-- GRAFICO 3 - RawGraphs -->
   <h4>Gráfico circular que representa el gasto en internet y electricidad según tipo y mes</h4>
-  <iframe src="https://oscarmarasca.github.io/infovis/tp_1_rowgraphs.html" 
-          width="800" height="600" style="border:none;"></iframe>
+  <iframe src="https://oscarmarasca.github.io/infovis/tp_1_rowgraphs.html" width="800" height="600"></iframe>
   
   <!-- GRAFICO 4 - Tableau (A) -->
-  <h4>Indice de evolución del gasto en internet, electricidad e IPC en la serie julio 2024 - junio 2025 (base 100 julio 2024)</h4>
-  <div class="tableauPlaceholder" id="viz1756824737605" style="margin: 0 auto; display: inline-block;">
+  <h4>Índice de evolución del gasto en internet, electricidad e IPC (base 100 julio 2024)</h4>
+  <div class="tableauPlaceholder" id="viz1756824737605">
     <noscript>
       <a href="#">
-        <img alt="Indice de evolución del gasto" 
-             src="https://public.tableau.com/static/images/tp/tp_1_tableau_b_17568247064800/Hoja1/1_rss.png" 
-             style="border: none"/>
+        <img alt="Índice de evolución del gasto" 
+             src="https://public.tableau.com/static/images/tp/tp_1_tableau_b_17568247064800/Hoja1/1_rss.png"/>
       </a>
     </noscript>
-    <object class="tableauViz" style="display:none;"></object>
+    <object class="tableauViz" style="display:none;">
+      <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F"/>
+      <param name="embed_code_version" value="3"/>
+      <param name="site_root" value=""/>
+      <param name="name" value="tp_1_tableau_b_17568247064800/Hoja1"/>
+      <param name="tabs" value="no"/>
+      <param name="toolbar" value="yes"/>
+      <param name="static_image" value="https://public.tableau.com/static/images/tp/tp_1_tableau_b_17568247064800/Hoja1/1.png"/>
+      <param name="animate_transition" value="yes"/>
+      <param name="display_static_image" value="yes"/>
+      <param name="display_spinner" value="yes"/>
+      <param name="display_overlay" value="yes"/>
+      <param name="display_count" value="yes"/>
+      <param name="language" value="en-US"/>
+      <param name="filter" value="publish=yes"/>
+    </object>
   </div>
   <script type="text/javascript">
-    var divElement = document.getElementById("viz1756824737605");
-    var vizElement = divElement.getElementsByTagName("object")[0];
-    vizElement.style.width = "800px";
-    vizElement.style.height = "600px";
-    var scriptElement = document.createElement("script");
-    scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
-    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    (function(){
+      var divElement = document.getElementById("viz1756824737605");
+      var vizElement = divElement.getElementsByTagName("object")[0];
+      vizElement.style.width = "800px";
+      vizElement.style.height = "600px";
+      var scriptElement = document.createElement("script");
+      scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+      vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    })();
   </script>
 
   <!-- GRAFICO 5 - Tableau (B) -->
-  <h4>Consumo y Costo del servicio de electricidad serie julio 2024 - junio 2025</h4>
-  <div class="tableauPlaceholder" id="viz1756788165126" style="margin: 0 auto; display: inline-block;">
+  <h4>Consumo y Costo del servicio de electricidad (julio 2024 - junio 2025)</h4>
+  <div class="tableauPlaceholder" id="viz1756788165126">
     <noscript>
       <a href="#">
         <img alt="Consumo y Costo electricidad" 
-             src="https://public.tableau.com/static/images/tp/tp_1_tableau/Hoja1/1_rss.png" 
-             style="border: none"/>
+             src="https://public.tableau.com/static/images/tp/tp_1_tableau/Hoja1/1_rss.png"/>
       </a>
     </noscript>
-    <object class="tableauViz" style="display:none;"></object>
+    <object class="tableauViz" style="display:none;">
+      <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F"/>
+      <param name="embed_code_version" value="3"/>
+      <param name="site_root" value=""/>
+      <param name="name" value="tp_1_tableau/Hoja1"/>
+      <param name="tabs" value="no"/>
+      <param name="toolbar" value="yes"/>
+      <param name="static_image" value="https://public.tableau.com/static/images/tp/tp_1_tableau/Hoja1/1.png"/>
+      <param name="animate_transition" value="yes"/>
+      <param name="display_static_image" value="yes"/>
+      <param name="display_spinner" value="yes"/>
+      <param name="display_overlay" value="yes"/>
+      <param name="display_count" value="yes"/>
+      <param name="language" value="es-ES"/>
+    </object>
   </div>
   <script type="text/javascript">
-    var divElement = document.getElementById("viz1756788165126");
-    var vizElement = divElement.getElementsByTagName("object")[0];
-    vizElement.style.width = "800px";
-    vizElement.style.height = "600px";
-    var scriptElement = document.createElement("script");
-    scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
-    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    (function(){
+      var divElement = document.getElementById("viz1756788165126");
+      var vizElement = divElement.getElementsByTagName("object")[0];
+      vizElement.style.width = "800px";
+      vizElement.style.height = "600px";
+      var scriptElement = document.createElement("script");
+      scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+      vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    })();
   </script>
 
   <!-- GRAFICO 6 - Tableau (C) -->
-  <h4>Costo del servicio de internet serie julio 2024 - junio 2025</h4>
-  <div class="tableauPlaceholder" id="viz1756788449117" style="margin: 0 auto; display: inline-block;">
+  <h4>Costo del servicio de internet (julio 2024 - junio 2025)</h4>
+  <div class="tableauPlaceholder" id="viz1756788449117">
     <noscript>
       <a href="#">
         <img alt="Costo servicio de internet" 
-             src="https://public.tableau.com/static/images/tp/tp_1_tableau_b/Hoja2/1_rss.png" 
-             style="border: none"/>
+             src="https://public.tableau.com/static/images/tp/tp_1_tableau_b/Hoja2/1_rss.png"/>
       </a>
     </noscript>
-    <object class="tableauViz" style="display:none;"></object>
+    <object class="tableauViz" style="display:none;">
+      <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F"/>
+      <param name="embed_code_version" value="3"/>
+      <param name="site_root" value=""/>
+      <param name="name" value="tp_1_tableau_b/Hoja2"/>
+      <param name="tabs" value="no"/>
+      <param name="toolbar" value="yes"/>
+      <param name="static_image" value="https://public.tableau.com/static/images/tp/tp_1_tableau_b/Hoja2/1.png"/>
+      <param name="animate_transition" value="yes"/>
+      <param name="display_static_image" value="yes"/>
+      <param name="display_spinner" value="yes"/>
+      <param name="display_overlay" value="yes"/>
+      <param name="display_count" value="yes"/>
+      <param name="language" value="es-ES"/>
+      <param name="filter" value="publish=yes"/>
+    </object>
   </div>
   <script type="text/javascript">
-    var divElement = document.getElementById("viz1756788449117");
-    var vizElement = divElement.getElementsByTagName("object")[0];
-    vizElement.style.width = "800px";
-    vizElement.style.height = "600px";
-    var scriptElement = document.createElement("script");
-    scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
-    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    (function(){
+      var divElement = document.getElementById("viz1756788449117");
+      var vizElement = divElement.getElementsByTagName("object")[0];
+      vizElement.style.width = "800px";
+      vizElement.style.height = "600px";
+      var scriptElement = document.createElement("script");
+      scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+      vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    })();
   </script>
 
 </body>
