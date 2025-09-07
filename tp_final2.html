@@ -12,7 +12,7 @@
       padding: 10px;
     }
     h4 {
-      font-size: 12px; /* tamaño pedido */
+      font-size: 12px; /* tamaño de títulos */
       margin: 10px 0;
     }
     iframe {
@@ -20,20 +20,18 @@
       margin: 0 auto 20px;
       border: none;
     }
-    /* Contenedores Tableau: fijos a 800x600 tal como querías */
+    /* Contenedores Tableau */
     .tableauPlaceholder {
       margin: 0 auto 20px;
-      display: inline-block;
-      width: 800px;
-      height: 600px;
-      position: relative;
+      display: block;
+      width: 800px !important;   /* ancho fijo */
+      height: 600px !important;  /* alto fijo */
     }
-    /* El object lo dejamos oculto hasta que el script de tableau lo procese,
-       pero le damos ancho/alto para que la librería lo reemplace correctamente */
     .tableauPlaceholder object {
-      display: none;
-      width: 100%;
-      height: 100%;
+      width: 800px !important;
+      height: 600px !important;
+      display: block;
+      margin: 0 auto;
     }
   </style>
 </head>
@@ -46,111 +44,10 @@
   <!-- GRAFICO 2 - Flourish -->
   <h4>Serie gasto electricidad - internet representada por gráfico de barras</h4>
   <iframe src="https://oscarmarasca.github.io/infovis/tp_flourish.html" width="800" height="600"></iframe>
-
+  
   <!-- GRAFICO 3 - RawGraphs -->
   <h4>Gráfico circular que representa el gasto en internet y electricidad según tipo y mes</h4>
   <iframe src="https://oscarmarasca.github.io/infovis/tp_1_rowgraphs.html" width="800" height="600"></iframe>
 
   <!-- GRAFICO 4 - Tableau (A) -->
-  <h4>Índice de evolución del gasto en internet, electricidad e IPC (base 100 julio 2024)</h4>
-  <div class="tableauPlaceholder" id="viz1756824737605">
-    <noscript>
-      <a href="#"><img alt="Índice de evolución del gasto"
-        src="https://public.tableau.com/static/images/tp/tp_1_tableau_b_17568247064800/Hoja1/1_rss.png"/></a>
-    </noscript>
-    <object class="tableauViz" style="display:none;">
-      <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F"/>
-      <param name="embed_code_version" value="3"/>
-      <param name="site_root" value=""/>
-      <param name="name" value="tp_1_tableau_b_17568247064800/Hoja1"/>
-      <param name="tabs" value="no"/>
-      <param name="toolbar" value="yes"/>
-      <param name="static_image" value="https://public.tableau.com/static/images/tp/tp_1_tableau_b_17568247064800/Hoja1/1.png"/>
-      <param name="animate_transition" value="yes"/>
-      <param name="display_static_image" value="yes"/>
-      <param name="display_spinner" value="yes"/>
-      <param name="display_overlay" value="yes"/>
-      <param name="display_count" value="yes"/>
-      <param name="language" value="en-US"/>
-      <param name="filter" value="publish=yes"/>
-    </object>
-  </div>
-
-  <!-- GRAFICO 5 - Tableau (B) -->
-  <h4>Consumo y Costo del servicio de electricidad (julio 2024 - junio 2025)</h4>
-  <div class="tableauPlaceholder" id="viz1756788165126">
-    <noscript>
-      <a href="#"><img alt="Consumo y Costo electricidad"
-        src="https://public.tableau.com/static/images/tp/tp_1_tableau/Hoja1/1_rss.png"/></a>
-    </noscript>
-    <object class="tableauViz" style="display:none;">
-      <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F"/>
-      <param name="embed_code_version" value="3"/>
-      <param name="site_root" value=""/>
-      <param name="name" value="tp_1_tableau/Hoja1"/>
-      <param name="tabs" value="no"/>
-      <param name="toolbar" value="yes"/>
-      <param name="static_image" value="https://public.tableau.com/static/images/tp/tp_1_tableau/Hoja1/1.png"/>
-      <param name="animate_transition" value="yes"/>
-      <param name="display_static_image" value="yes"/>
-      <param name="display_spinner" value="yes"/>
-      <param name="display_overlay" value="yes"/>
-      <param name="display_count" value="yes"/>
-      <param name="language" value="es-ES"/>
-    </object>
-  </div>
-
-  <!-- GRAFICO 6 - Tableau (C) -->
-  <h4>Costo del servicio de internet (julio 2024 - junio 2025)</h4>
-  <div class="tableauPlaceholder" id="viz1756788449117">
-    <noscript>
-      <a href="#"><img alt="Costo servicio de internet"
-        src="https://public.tableau.com/static/images/tp/tp_1_tableau_b/Hoja2/1_rss.png"/></a>
-    </noscript>
-    <object class="tableauViz" style="display:none;">
-      <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F"/>
-      <param name="embed_code_version" value="3"/>
-      <param name="site_root" value=""/>
-      <param name="name" value="tp_1_tableau_b/Hoja2"/>
-      <param name="tabs" value="no"/>
-      <param name="toolbar" value="yes"/>
-      <param name="static_image" value="https://public.tableau.com/static/images/tp/tp_1_tableau_b/Hoja2/1.png"/>
-      <param name="animate_transition" value="yes"/>
-      <param name="display_static_image" value="yes"/>
-      <param name="display_spinner" value="yes"/>
-      <param name="display_overlay" value="yes"/>
-      <param name="display_count" value="yes"/>
-      <param name="language" value="es-ES"/>
-      <param name="filter" value="publish=yes"/>
-    </object>
-  </div>
-
-  <!-- CARGA ÚNICA del API de Tableau -->
-  <script src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
-
-  <!-- Inicialización segura (solo cambia tamaños / evita errores si falta algo) -->
-  <script>
-    (function(){
-      var ids = ['viz1756824737605','viz1756788165126','viz1756788449117'];
-      ids.forEach(function(id){
-        try {
-          var div = document.getElementById(id);
-          if(!div) return;
-          // garantizamos el tamaño del contenedor
-          div.style.width = '800px';
-          div.style.height = '600px';
-          var obj = div.getElementsByTagName('object')[0];
-          if(!obj) return;
-          // dar dimensiones relativas al object para que la librería lo reemplace bien
-          obj.style.width = '100%';
-          obj.style.height = '100%';
-        } catch(e) {
-          // no interrumpe la ejecución si hay error
-          console.error('Error inicializando tableau embed', id, e);
-        }
-      });
-    })();
-  </script>
-
-</body>
-</html>
+  <h4>Índice de evolución del gasto en internet, electricidad e IPC (b
